@@ -82,19 +82,14 @@ window.addEventListener("resize", () => {
 });
 window.addEventListener("dblclick", () => {
   // 兼容safari
-  const fullscreenElement =
-    document.fullscreenElement || document.webkitFullscreenElement;
+  const fullscreenElement = document.fullscreenElement;
   if (!fullscreenElement) {
     if (canvas.requestFullscreen) {
       canvas?.requestFullscreen();
-    } else if (canvas.webkitFullscreenElement) {
-      canvas?.webkitFullscreenElement();
     }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
     }
   }
 });
